@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import os, sys, shutil, subprocess, argparse as arguments
+
+REPOS = {
+    "dropwizard" : "https://github.com/MatthewJWalls/DropStrap.git",
+    "flask"      : "https://github.com/MatthewJWalls/FlaskStrap.git"
+}
+
+def description():
+    return "Supported types:\n" + "\n".join("  %s" % x for x in REPOS)
+
+if __name__ == "__main__":
+
+    # check args
+    
+    parser = arguments.ArgumentParser(
+        epilog=description(),
+        formatter_class=arguments.RawDescriptionHelpFormatter
+    )
+
+    parser.add_argument("app", help="Project type")
+    parser.add_argument("name", help="Name for the created project")
+    args = parser.parse_args()
+
+    # do we have a type for that repo?
+
+    if args.app not in REPOS:
+        print "The app '%s' is not supported." % args.app
+        sys.exit(1)
+
+    # clone associated project + kill the .git directory
+
+    subprocess.check_call(["git", "clone", REPOS[args.app], args.name])
+    shutil.rmtree(os.path.join(args.name, ".git"))
