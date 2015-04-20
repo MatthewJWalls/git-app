@@ -21,3 +21,4 @@ To create a dropwizard app under the directory "myawesomeapp":
 * Dropwizard
 * Flask
 * Sinatra
+* Nickel

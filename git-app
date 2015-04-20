@@ -5,7 +5,8 @@ import os, sys, shutil, subprocess, argparse as arguments
 REPOS = {
     "dropwizard" : "https://github.com/MatthewJWalls/DropStrap.git",
     "flask"      : "https://github.com/MatthewJWalls/FlaskStrap.git",
-    "sinatra"    : "https://github.com/ninjabear/sinatra-bootstrap"
+    "sinatra"    : "https://github.com/ninjabear/sinatra-bootstrap",
+    "nickel"     : "https://github.com/ninjabear/nickel-bootstrap.git"
 }
 
 def description():
