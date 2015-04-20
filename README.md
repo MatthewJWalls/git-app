@@ -2,6 +2,10 @@
 
 Adds an "app" command to git which generates app projects automagically.
 
+## Requirements
+
+Requires python 2.7+ (no python3 support yet).
+
 ## Installation
 
 Put git-app somewhere on your path.
